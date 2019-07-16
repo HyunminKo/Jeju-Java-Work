@@ -246,3 +246,76 @@ int main() {
 
 - void\* 변수는 어떤 기억공간이든 다 가리킨다.
 - 가리키고 있긴 하지만 (void\*의 크기는 8바이트) 해당 하는 값이 어떤 자료형의 어떤 크기인지 모르므로 형변환이 필요하다
+
+```c
+#include <stdio.h>
+
+int add(int i,int j) {
+    return i+j;
+}
+int main() {
+    int r;
+    r = add(10,20);
+    printf("%d\n",r);
+    return 0;
+}
+
+```
+
+- 함수 선언  
+  [유일한 리턴타입][이름] (0..\* 변수선언 - 매개변수){ ... }
+- 로컬 변수는 함수 안에서 선언된 변수  
+  함수가 호출되는 시점에 메모리 할당, 호출 끝나면 소거
+
+- 대입연산(=)의 오른편이 먼저 동작. 선언된 함수를 호출한다.
+
+- 함수에는 매개변수가 선언된다. 호출시에는 값을 명시한다. 매개변수는 호출시 명시된 값으로 대입 당한다.
+  매개변수도 로컬변수여서 함수가 호출 될 때 할당되고 종료할 때 소거된다.
+
+```c
+#include <stdio.h>
+int add(int i , int j) {
+    return i+j;
+}
+int main() {
+    int r;
+    int (*fp)(int,int);
+    fp = add;
+
+    r = fp(10,20);
+    printf("%d\n",r);
+    return 0;
+}
+```
+
+- fp는 함수 포인터이기 때문에 함수를 가리킬 수 있다. 리턴 타입이 int, 매개변수가 int,int 형태로 선언된 함수를
+
+```c
+#include <stdio.h>
+
+float danri(float money, int year, float interest) {
+    return money + money * year * interest;
+}
+float bokri(float money, int year, float interest) {
+    for(int i = 0; i < year; i++){
+        money = money + (money * interest);
+    }
+    return money;
+}
+
+int main() {
+    float r;
+    float (*fp) (float,int,float);
+
+    fp = danri;
+    r = fp(100.0,100,0.066);
+    printf("%f\n",r);
+
+    fp = bokri;
+    r = fp(100.0,100,0.066);
+    printf("%f\n",r);
+
+    return 0;
+}
+
+```

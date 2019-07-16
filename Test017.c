@@ -14,7 +14,7 @@ int main() {
     printf("%d\n",*h);
     printf("%d\n",*((int*)t));
 
-    printf("%lu %lu\n",sizeof(i),sizeof(t));
+    printf("%lu %lu\n",sizeof(h),sizeof(t));
 
     t = &j;
     printf("%lu %lu\n",sizeof(j),sizeof(t));
