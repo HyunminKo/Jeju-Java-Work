@@ -159,3 +159,90 @@ public class Test009 {
     }
 }
 ```
+
+## Day 2
+
+```c
+#include <stdio.h>
+int main() {
+    int i;
+    int j;
+    i = 100;
+    j = i;
+    printf("%d %d\n",i,j);
+
+    return 0;
+}
+```
+
+```c
+#include <stdio.h>
+
+int main() {
+    int* t;
+    int* l;
+    int i;
+    i = 100;
+    t = &i;
+
+    printf("%d\n",*t);
+    printf("%d\n",i);
+
+    printf("%x\n",t);
+    printf("%x\n",&t);
+    printf("%x\n",&i);
+    return 0;
+}
+
+```
+
+- 포인터는 저장하는 공간을 가르키기 위한 용도이다.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int* t;
+    int* l;
+    int i;
+
+    i = 100;
+    t = &i;
+    l = t;
+
+    printf("%d\n",*t);
+    printf("%d\n",*l);
+    printf("%d\n",i);
+    return 0;
+}
+```
+
+- 포인터 변수간의 대입은 왼쪽 포인터 변수가 오른쪽 포인터 변수가 가리키고 있는 대상을 가리킨다.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int i;
+    double j;
+    int* h;
+    void* t;
+
+    i = 100;
+    j = 3.14;
+
+    t = &i;
+    h = (int*)t;
+    printf("%d\n",*h);
+    printf("%d\n",*((int*)t));
+
+    printf("%lu %lu\n",sizeof(i),sizeof(t));
+
+    t = &j;
+    printf("%lu %lu\n",sizeof(j),sizeof(t));
+    return 0;
+}
+```
+
+- void\* 변수는 어떤 기억공간이든 다 가리킨다.
+- 가리키고 있긴 하지만 void\*의 크기는 8바이트이며 해당 하는 값이 어떤 자료형의 어떤 크기인지 모르므로 형변환이 필요하다
