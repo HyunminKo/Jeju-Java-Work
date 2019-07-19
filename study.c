@@ -20,7 +20,6 @@ int main() {
     t = new_Apple(100);
     t->i = 100;
     printf("%d\n",(t->i + t->add(10,20)));
-    printf("%d\n",add_Apple);
     free(t);
     return 0;
 }
