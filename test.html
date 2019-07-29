@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>test</title>
+  </head>
+  <body>
+    <div id="app">
+      Geolocation API Test
+    </div>
+    test
+  </body>
+</html>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"
+></script>
+<script>
+  var options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+  };
+
+  function success(pos) {
+    var crd = pos.coords;
+    $("#app").append("<br>");
+    $("#app").append("Your current position is:");
+    $("#app").append("<br>");
+    $("#app").append("Latitude : " + crd.latitude);
+    $("#app").append("<br>");
+    $("#app").append("Longitude: " + crd.longitude);
+    $("#app").append("<br>");
+    $("#app").append("More or less " + crd.accuracy + " meters.");
+    $("#app").append("<br>");
+  }
+
+  function error(err) {
+    console.warn("ERROR(" + err.code + "): " + err.message);
+  }
+
+  navigator.geolocation.getCurrentPosition(success, error, options);
+</script>
