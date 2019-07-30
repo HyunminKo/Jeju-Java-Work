@@ -1,0 +1,61 @@
+package study2;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class BangMyungDAO_OracleImpl2 implements BangMyungDAO {
+
+
+    @Override
+    public List<BangMyungVO> findAll() {
+        List<BangMyungVO> list = new ArrayList<>();
+        try {
+            Class.forName("oracle.jdbc.OracleDriver");
+            Connection conn= DriverManager.getConnection("jdbc:oracle:thin:@192.168.2.74:1521/XE","system","oracle");
+            Statement stmt = conn.createStatement();
+            String sql = "SELECT no,gul,the_time FROM bangmyung_t";
+            ResultSet rs = stmt.executeQuery(sql);
+
+            while(rs.next()){
+                list.add(
+                        new BangMyungVO(
+                                rs.getInt("no"),
+                                rs.getString("gul"),
+                                rs.getString("the_time")));
+            }
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    @Override
+    public void add(BangMyungVO vo) throws Exception{
+        Connection conn = null;
+        Statement stmt = null;
+
+        try {
+            Class.forName("oracle.jdbc.OracleDriver");
+            conn= DriverManager.getConnection("jdbc:oracle:thin:@192.168.2.74:1521/XE","system","oracle");
+            stmt = conn.createStatement();
+            String sql = "INSERT INTO bangmyung_t values (seq_bangmyung.nextval,'"+vo.getGul()+"',sysdate)";
+            stmt.executeUpdate(sql);
+
+        }catch (Exception e){
+            throw e;
+        }finally {
+            try{
+                if(conn != null) {conn.close();}
+                if(stmt!=null){ stmt.close(); }
+            }
+            catch (SQLException e){
+                e.printStackTrace();
+            }
+
+        }
+    }
+}

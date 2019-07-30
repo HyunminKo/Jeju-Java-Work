@@ -5,6 +5,9 @@ public class BangMyungVO {
     private String gul = null;
     private String theTime = null;
 
+    public BangMyungVO() {
+    }
+
     public BangMyungVO(Integer no, String gul, String theTime) {
         this.no = no;
         this.gul = gul;

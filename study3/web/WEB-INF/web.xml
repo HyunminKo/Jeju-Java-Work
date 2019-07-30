@@ -49,48 +49,26 @@
         <extension>wsdl</extension>
         <mime-type>text/xml</mime-type>
     </mime-mapping>
+    
     <servlet>
-        <servlet-name>abcd</servlet-name>
-        <servlet-class>study2.HelloWorld3</servlet-class>
+        <servlet-name>abcd5</servlet-name>
+        <servlet-class>study3.LifeServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>abcd</servlet-name>
-        <url-pattern>/study2</url-pattern>
+        <servlet-name>abcd5</servlet-name>
+        <url-pattern>/life</url-pattern>
     </servlet-mapping>
-
+    
     <servlet>
-        <servlet-name>decf</servlet-name>
-        <servlet-class>hw.gugudan</servlet-class>
+        <servlet-name>abcd6</servlet-name>
+        <servlet-class>study3.ConfigServlet</servlet-class>
+        <init-param>
+            <param-name>apple</param-name>
+            <param-value>blahblah</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
-        <servlet-name>decf</servlet-name>
-        <url-pattern>/hw</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>abcd2</servlet-name>
-        <servlet-class>study2.FormTestServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>abcd2</servlet-name>
-        <url-pattern>/form_test2</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>abcd3</servlet-name>
-        <servlet-class>study2.BangMyungList</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>abcd3</servlet-name>
-        <url-pattern>/bangmyung_list</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>abcd4</servlet-name>
-        <servlet-class>study2.BangMyungAdd2</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>abcd4</servlet-name>
-        <url-pattern>/bangmyung_add2</url-pattern>
+        <servlet-name>abcd6</servlet-name>
+        <url-pattern>/config</url-pattern>
     </servlet-mapping>
 </web-app>

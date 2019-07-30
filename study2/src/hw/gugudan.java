@@ -27,7 +27,7 @@ public class gugudan extends HttpServlet {
                 float g = (float) (rand.nextFloat() / 2f + 0.5);
                 float b = (float) (rand.nextFloat() / 2f + 0.5);
                 Color rc = new Color(r, g, b);
-                out.println(String.format("<td style=\"background-color:rgba(%d,%d,%d,%d)\">",rc.getRed(),rc.getGreen(),rc.getBlue(),1));
+                out.println(String.format("<td style=\"background-color:rgba(%d,%d,%d,%f)\">",rc.getRed(),rc.getGreen(),rc.getBlue(),0.5));
                 out.println(String.format("%d * %d = %d",i,j,i*j));
                 out.println("       </td>");
             }
