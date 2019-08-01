@@ -71,4 +71,32 @@
         <servlet-name>abcd6</servlet-name>
         <url-pattern>/config</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>abcd7</servlet-name>
+        <servlet-class>study3.StateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>abcd7</servlet-name>
+        <url-pattern>/state</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>abcd8</servlet-name>
+        <servlet-class>study3.SessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>abcd8</servlet-name>
+        <url-pattern>/session</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>abcd9</servlet-name>
+        <servlet-class>study3.JSPServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>abcd9</servlet-name>
+        <url-pattern>/jsp</url-pattern>
+    </servlet-mapping>
 </web-app>
