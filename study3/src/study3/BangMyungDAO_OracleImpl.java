@@ -40,7 +40,7 @@ public class BangMyungDAO_OracleImpl implements BangMyungDAO {
 
         try {
             Class.forName("oracle.jdbc.OracleDriver");
-            conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XE","HR1234","HR");
+            conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XE","HR","HR");
             stmt = conn.createStatement();
             String sql = "INSERT INTO bangmyung_t values (seq_bangmyung.nextval,'"+vo.getGul()+"',sysdate)";
             stmt.executeUpdate(sql);

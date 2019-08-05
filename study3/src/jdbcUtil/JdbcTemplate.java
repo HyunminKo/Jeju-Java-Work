@@ -87,6 +87,7 @@ public class JdbcTemplate {
         }
         return vo;
     }
+    //select * from ? , bangmyung_t
     public <T> List<T> query(String sql, RowMapper<T> rowMapper, Object ... args) throws Exception {
         List<T> rl = new ArrayList<>();
         Connection conn = null;
@@ -108,13 +109,12 @@ public class JdbcTemplate {
                     stmt.setString(i+1, (String)args[i]);
                 }
             }
+            //select * from bangmyung_t;
             rs = stmt.executeQuery();
 
-            if(rs.next()){
+            while(rs.next()){
                 T vo = rowMapper.mapRow(rs);
                 rl.add(vo);
-            }else {
-                throw new Exception("no record");
             }
         }catch (Exception e){
             throw e;
