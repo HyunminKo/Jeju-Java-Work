@@ -1,0 +1,9 @@
+[2019-08-05 10:18:55,014]  WARN org.apache.axis.utils.JavaUtils : Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+ [2019-08-05 10:18:58,177]  INFO about : HelloWorld
+ [2019-08-05 10:51:36,658]  INFO apple : Hello World!!!!!
+ [2019-08-05 10:52:32,808]  INFO apple : Hello World!!!!!
+ [2019-08-05 10:52:33,457]  INFO apple : Hello World!!!!!
+ [2019-08-05 10:52:33,710]  INFO apple : Hello World!!!!!
+ [2019-08-05 10:52:33,916]  INFO apple : Hello World!!!!!
+ [2019-08-05 10:52:34,090]  INFO apple : Hello World!!!!!
+ 

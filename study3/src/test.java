@@ -7,7 +7,7 @@ public class test {
         String sql = "select * from ?";
         try {
             template.query(sql,new BangMyungRowMapper(),"bangmyung_t");
-            template.query(sql,new UserRowMapper(),"user");
+//            template.query(sql,new UserRowMapper(),"user");
         } catch (Exception e) {
             e.printStackTrace();
         }
